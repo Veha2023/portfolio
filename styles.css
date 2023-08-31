@@ -1,0 +1,159 @@
+/* General styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Wave header styling */
+.wave-header {
+    background-color:black;
+    color: white;
+    text-align: center;
+    padding: 3rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.wave-header::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px; /* Adjust height as needed */
+    background-color: #0e45f997;
+    clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 100%);
+}
+
+
+/* Main content styling */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Project styling */
+.project {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Social links styling */
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-link {
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #333;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.social-link:hover {
+    background-color: #333;
+    color: white;
+}
+
+
+/* Navigation styles */
+.navigation {
+    position: fixed;
+    font-weight: bold;
+    font-size: 70%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3%;
+    background-color:rgba(0, 0, 0, 0.361);
+    padding: 1rem 0;
+    z-index: 100; /* Ensures the navigation is on top of other content */
+}
+
+.navigation ul {
+    list-style: none;
+    padding: 0;
+}
+
+.navigation li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.navigation a {
+    color:red;
+    text-decoration: none;
+}
+
+.navigation a:hover {
+    text-decoration: underline;
+}
+
+/* Bubble styles */
+.bubble-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.bubble {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    animation: float 4s infinite ease-in-out, drift 6s infinite alternate ease-in-out;
+    transform-origin: center bottom;
+}
+
+.bubble.yellow {
+    background-color: yellow;
+}
+
+.bubble.green {
+    background-color: green;
+}
+
+.bubble.pink {
+    background-color: pink;
+}
+
+.bubble.purple {
+    background-color: purple;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15vh);
+    }
+}
+
+@keyframes drift {
+    to {
+        transform: translateX(20vw);
+    }
+}
+
+
+
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+}
